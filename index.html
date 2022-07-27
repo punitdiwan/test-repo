@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Grid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/all.min.js"
+    integrity="sha512-jAu66pqHWWQ564NS+m2Zxe13Yek98R7JWNjQLzW+PQ4i2jsMxBT1nGrQ0gFUIVJ4kPkEFe5gelBWNEDTBqmn/w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #ddd;
+      --dark: #333;
+      --light: #fff;
+      --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    }
+
+    .boxes {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+
+    .main-nav ul {
+      display: grid;
+      grid-gap: 20px;
+      padding: 0;
+      list-style: none;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+.showcase {
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+  </style>
+</head>
+
+<body class="bg-[#ccc] my-[30px] mx-[50px]">
+  <div class="grid gap-5">
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li>a href="#">About</a>        </li>
+        <li>a href="#">Services</a>        </li>
+        <li>a href="#">Contact</a>        </li>
+      </ul>
+    </nav>
+
+    <!-- Top Container -->
+    <section class="top-container">
+      <header class="min-h-[400px] flex flex-col p-[3rem]  items-start justify-center col-span-2 bg-cover bg-center bg-[url(https://image.ibb.co/kYJK8x/showcase.jpg)]">
+        <h1 class="text-[4rem] text-white">Your Web Presence</h1>
+        <p class="text-[1.3rem] text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ipsam! Nihil
+          quo minima nulla atque!</p>
+        <a href="#" class="btn">Read More</a>
+      </header>
+      <div class="bg-[#ddd] p-[1.5rem] grid items-center justify-center  top-box top-box-a">
+        <h4>Membership</h4>
+        <p class="price text-[2.5rem]">$199/mo</p>
+        <a href="" class="btn bg-[#333] text-[#ddd] pt-[0.6rem] pl-[1.3rem] pb-[0.6] pr-[1.3rem]">Buy Now</a>
+      </div>
+      <div class="bg-[#ddd] p-[1.5rem] grid items-center justify-center top-box top-box-b">
+        <h4>Pro Membership</h4>
+        <p class="price">$299/mo</p>
+        <a href="" class="btn bg-[#333] text-[#ddd] pt-[0.6rem] pl-[1.3rem] pb-[0.6] pr-[1.3rem]">Buy Now</a>
+      </div>
+    </section>
+
+    <!-- Boxes Section -->
+    <section class="boxes grid gap-5">
+      <div class="box bg-[#ddd] text-center py[1.5rem] px-[2rem]">
+        <i class="fas fa-chart-pie fa-4x"></i>
+        <h3>Analytics</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box  bg-[#ddd] text-center py[1.5rem] px-[2rem]">
+        <i class="fas fa-globe fa-4x"></i>
+        <h3>Marketing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box  bg-[#ddd] text-center py[1.5rem] px-[2rem]">
+        <i class="fas fa-cog fa-4x"></i>
+        <h3>Development</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box bg-[#ddd] text-center py[1.5rem] px-[2rem]">
+        <i class="fas fa-users fa-4x"></i>
+        <h3>Support</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info grid gap-5 grid-cols-2 bg-[#ddd] p-[3rem]">
+      <img src="https://image.ibb.co/j4Qz8x/pic1.jpg" alt="">
+      <div>
+        <h2>Your Business On The Web</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo non
+          repellendus?
+          Quae atque vero modi quidem! Autem cupiditate fugit doloribus ad amet, asperiores provident commodi.</p>
+        <a href="#" class="btn bg-[#333] text-[#ddd] pt-[0.6rem] pl-[1.3rem] pb-[0.6] pr-[1.3rem]">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+      <img src="https://source.unsplash.com/random/200x200" alt="">
+      <img src="https://source.unsplash.com/random/201x200" alt="">
+      <img src="https://source.unsplash.com/random/202x200" alt="">
+      <img src="https://source.unsplash.com/random/203x200" alt="">
+      <img src="https://source.unsplash.com/random/204x200" alt="">
+      <img src="https://source.unsplash.com/random/205x200" alt="">
+      <img src="https://source.unsplash.com/random/206x200" alt="">
+      <img src="https://source.unsplash.com/random/207x200" alt="">
+      <img src="https://source.unsplash.com/random/208x200" alt="">
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-[2rem] bg-[#333] text-[#ddd] p-[1rem] text-center">
+      <p>GridBiz &copy; 2018</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
