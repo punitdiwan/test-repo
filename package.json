@@ -1,0 +1,23 @@
+{
+  "name": "test-repo",
+  "version": "1.0.0",
+  "description": "\"This is my Branch Commit Mirror latest\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.maitretech.com/punitdiwan/test-repo.git"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "echo \"[Husky] pre-commit\""
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^8.0.1"
+  }
+}
